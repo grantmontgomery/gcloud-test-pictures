@@ -7,6 +7,12 @@
   pointer-events: none;
 }
 
+.submit-button {
+  height: 40px;
+  width: 20px;
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
