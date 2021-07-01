@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <form className="picture-form">   
         <input type="text"></input>
-        <button className="submit-button" type="submit"></button>
+        <button className="submit-button" type="submit">Submit</button>
       </form>
     </div>
   );
