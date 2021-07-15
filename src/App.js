@@ -1,20 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
-
-
-
-
-
-
   return (
-    <div className="App">
-      <form className="picture-form">   
-        <input type="text"></input>
-        <button className="submit-button" type="submit">Submit</button>
-      </form>
-    </div>
+    <React.Fragment>
+      <main></main>
+    </React.Fragment>
   );
 }
 
