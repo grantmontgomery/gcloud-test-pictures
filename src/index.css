@@ -16,6 +16,39 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  min-height: 50px;
+  max-height: 60px;
+}
+
+main {
+  width: 100%;
+  max-width: 1250px;
+}
+
+main > section:nth-child(1) {
+  height: 50%;
+  max-height: 380px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+main > section:nth-child(2) {
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto;
+  height: fit-content;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
