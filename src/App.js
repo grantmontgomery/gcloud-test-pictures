@@ -15,17 +15,14 @@ function App() {
     setError(false);
     try {
       if (text === "") throw Error();
-      // const response = await fetch("", {
-      //   body: {
-      //     text,
-      //   },
-      // });
+      console.log("submit function triggered.");
+      const response = await fetch(process.env.REACT_APP_TEST_URL);
+
+      const responseJSON = response.json();
     } catch {
       setError(true);
     }
   };
-
-  console.log(error);
 
   return (
     <React.Fragment>
