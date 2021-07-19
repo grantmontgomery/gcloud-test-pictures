@@ -22,12 +22,14 @@ function App() {
           "Content-Type": "application/json",
         },
         method: "POST",
-        body: {
-          message: "Hello World!",
-        },
+        body: JSON.stringify({
+          text,
+        }),
       });
 
       const responseJSON = response.json();
+
+      console.log(responseJSON);
     } catch {
       setError(true);
     }
