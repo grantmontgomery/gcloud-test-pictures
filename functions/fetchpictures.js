@@ -1,8 +1,11 @@
 exports.getPictures = async (req, res) => {
   try {
-    // if (req.method !== "GET") throw new Error("Only get request enabled.");
-    // const unsplashPictures = new URL("https://api.unsplash.com/search/photos");
-    // const response = await fetch(unsplashPictures);
+    res.set("Access-Control-Allow-Origin", "*");
+    if (req.method === "OPTIONS") {
+      res.set("Access-Control-Allow-Methods", "GET, POST");
+      res.set("Access-Control-Allow-Headers", "Content-Type");
+      res.set("Access-Control-Max-Age", "3600");
+    }
 
     res.status(200).send("Gcloud test pictures serverless function");
   } catch (error) {

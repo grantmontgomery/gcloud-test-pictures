@@ -16,7 +16,16 @@ function App() {
     try {
       if (text === "") throw Error();
       console.log("submit function triggered.");
-      const response = await fetch(process.env.REACT_APP_TEST_URL);
+      const response = await fetch(process.env.REACT_APP_TEST_URL, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: {
+          message: "Hello World!",
+        },
+      });
 
       const responseJSON = response.json();
     } catch {
