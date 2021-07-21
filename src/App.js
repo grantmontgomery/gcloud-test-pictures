@@ -15,7 +15,6 @@ function App() {
     setError(false);
     try {
       if (text === "") throw Error();
-      console.log("submit function triggered.");
       const response = await fetch(process.env.REACT_APP_TEST_URL, {
         headers: {
           Accept: "application/json",
