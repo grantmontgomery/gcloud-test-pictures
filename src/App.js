@@ -49,11 +49,15 @@ function App() {
             handleSubmit={handleSubmit}
           ></SearchBar>
         </section>
-        <section className="results">
+        <section className="results" style={{ backdropFilter: "blur(10px)" }}>
           {loading
             ? "Loading"
             : results.map((result) => (
-                <Picture imageSource={result.urls.regular}></Picture>
+                <Picture
+                  imageHeight={result.height}
+                  imageWidth={result.width}
+                  imageSource={result.urls.regular}
+                ></Picture>
               ))}
         </section>
       </main>

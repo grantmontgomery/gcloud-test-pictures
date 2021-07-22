@@ -1,6 +1,15 @@
 img {
   display: block;
   position: relative;
-  width: auto;
+}
+
+.wrapper {
   height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

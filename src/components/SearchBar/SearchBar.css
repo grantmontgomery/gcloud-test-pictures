@@ -1,3 +1,30 @@
 button {
   cursor: pointer;
 }
+
+.search-wrapper {
+  height: 30px;
+
+  border-radius: 200px;
+  width: 500px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.search-wrapper > input {
+  width: 75%;
+  height: 100%;
+  margin: 0;
+  text-indent: 10%;
+  border: none;
+}
+
+.search-wrapper > button {
+  width: 25%;
+  margin: 0;
+  height: 100%;
+  border: none;
+}

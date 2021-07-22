@@ -3,6 +3,7 @@ body,
 #root {
   width: 100%;
   height: 100%;
+  background: #0f2027;
 }
 
 #root {
@@ -51,10 +52,15 @@ main > section:nth-child(2) {
   width: 100%;
   grid-template-rows: auto;
   height: fit-content;
+  padding: 10%;
+  gap: 25px;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   overflow: hidden;
   height: 500px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(200px, 50%));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 code {
