@@ -50,9 +50,11 @@ function App() {
           ></SearchBar>
         </section>
         <section className="results">
-          {results.map((result) => (
-            <Picture imageSource={result.urls.regular}></Picture>
-          ))}
+          {loading
+            ? "Loading"
+            : results.map((result) => (
+                <Picture imageSource={result.urls.regular}></Picture>
+              ))}
         </section>
       </main>
     </React.Fragment>
