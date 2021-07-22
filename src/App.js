@@ -1,20 +1,24 @@
 import React from "react";
-import { SearchBar, Picture } from "./components/SearchBar";
+import { SearchBar } from "./components/SearchBar";
+import { Picture } from "./components/Picture/Picture";
 import "./App.css";
 
 function App() {
-  const [text, setText] = React.useState("");
+  const [query, setQuery] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(false);
+  const [results, setResults] = React.useState([]);
 
   const handleTextInput = (event) => {
-    setText(event.target.value);
+    setQuery(event.target.value);
   };
 
   const handleSubmit = async () => {
     setError(false);
+    setLoading(true);
+    setResults([]);
     try {
-      if (text === "") throw Error();
+      if (query === "") throw Error();
       const response = await fetch(process.env.REACT_APP_TEST_URL, {
         headers: {
           Accept: "application/json",
@@ -22,15 +26,16 @@ function App() {
         },
         method: "POST",
         body: JSON.stringify({
-          text,
+          query,
         }),
       });
 
-      const responseJSON = response.json();
-
-      console.log(responseJSON);
+      const { results } = await response.json();
+      setResults(results);
+      setLoading(false);
     } catch {
       setError(true);
+      setLoading(false);
     }
   };
 
@@ -44,7 +49,11 @@ function App() {
             handleSubmit={handleSubmit}
           ></SearchBar>
         </section>
-        <section className="results"></section>
+        <section className="results">
+          {results.map((result) => (
+            <Picture imageSource={result.urls.regular}></Picture>
+          ))}
+        </section>
       </main>
     </React.Fragment>
   );

@@ -1,2 +1,2 @@
 import { SearchBar } from "./SearchBar";
-import { Picture } from "./Picture";
+import { Picture } from "Picture";
