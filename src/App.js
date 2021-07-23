@@ -1,5 +1,6 @@
 import React from "react";
 import { SearchBar } from "./components/SearchBar";
+import { LoadingBar } from "./components/LoadingBar/LoadingBar";
 import { Picture } from "./components/Picture/Picture";
 import "./App.css";
 
@@ -31,7 +32,7 @@ function App() {
       });
 
       const { results } = await response.json();
-      setResults(results);
+      results.length > 0 ? setResults(results) : setError(true);
       setLoading(false);
     } catch {
       setError(true);
@@ -49,16 +50,20 @@ function App() {
             handleSubmit={handleSubmit}
           ></SearchBar>
         </section>
-        <section className="results" style={{ backdropFilter: "blur(10px)" }}>
-          {loading
-            ? "Loading"
-            : results.map((result) => (
-                <Picture
-                  imageHeight={result.height}
-                  imageWidth={result.width}
-                  imageSource={result.urls.regular}
-                ></Picture>
-              ))}
+        <section className="results" style={{ backdropFilter: "blur(20px)" }}>
+          {loading ? (
+            <LoadingBar></LoadingBar>
+          ) : error ? (
+            "error"
+          ) : (
+            results.map((result) => (
+              <Picture
+                imageHeight={result.height}
+                imageWidth={result.width}
+                imageSource={result.urls.regular}
+              ></Picture>
+            ))
+          )}
         </section>
       </main>
     </React.Fragment>

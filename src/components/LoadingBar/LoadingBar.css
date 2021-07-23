@@ -1,0 +1,40 @@
+.loading-bar {
+  width: 500px;
+  height: 25px;
+  width: 500px;
+  position: absolute;
+  border-radius: 50px;
+  top: 50%;
+  left: 50%;
+  background: #0b171d;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.loading-bar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #0f2027,
+    #61dbfb,
+    #0f2027,
+    transparent
+  );
+  width: 100%;
+  animation-name: left-to-right;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-direction: alternate;
+}
+
+@keyframes left-to-right {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

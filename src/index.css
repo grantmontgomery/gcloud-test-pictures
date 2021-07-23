@@ -35,6 +35,9 @@ header {
 main {
   width: 100%;
   max-width: 1250px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 main > section:nth-child(1) {
@@ -51,10 +54,12 @@ main > section:nth-child(2) {
   display: grid;
   width: 100%;
   grid-template-rows: auto;
+  border-radius: 20px;
   height: fit-content;
+  border: solid 2px rgba(255, 255, 255, 0.4);
   padding: 10%;
   gap: 25px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(150, 150, 150, 0.25);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   overflow: hidden;
