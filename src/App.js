@@ -2,12 +2,15 @@ import React from "react";
 import { SearchBar } from "./components/SearchBar";
 import { useGetPictures } from "./hooks";
 import { LoadingBar } from "./components/LoadingBar/LoadingBar";
-import { Picture } from "./components/Picture/Picture";
+import Picture from "./components/Picture/Picture";
 import "./App.css";
 
 function App() {
-  const [query, setQuery] = React.useState("");
   const [results, callPictures] = useGetPictures();
+
+  const [query, setQuery] = React.useState("");
+
+  const memoizedResults = React.useMemo(() => results, [results]);
 
   const handleTextInput = (event) => {
     setQuery(event.target.value);
@@ -33,7 +36,7 @@ function App() {
           ) : results.error ? (
             "error"
           ) : (
-            results.data.map((result) => (
+            memoizedResults.data.map((result) => (
               <Picture
                 key={result.id}
                 imageHeight={result.height}
