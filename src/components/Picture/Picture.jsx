@@ -1,8 +1,8 @@
 import React from "react";
 import "./Picture.css";
 
-const Picture = ({ imageSource, imageHeight, imageWidth }) => {
-  console.log("rerender");
+export const Picture = ({ imageSource, imageHeight, imageWidth }) => {
+  console.log("rerender picture");
   return (
     <div className="wrapper">
       <img
@@ -16,5 +16,3 @@ const Picture = ({ imageSource, imageHeight, imageWidth }) => {
     </div>
   );
 };
-
-export default React.memo(Picture);

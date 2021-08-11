@@ -1,10 +1,6 @@
 import React from "react";
 
 export const useGetPictures = () => {
-  //   const [loading, setLoading] = React.useState(false);
-  //   const [error, setError] = React.useState(false);
-  //   const [results, setResults] = React.useState([]);
-
   const [results, setResults] = React.useState({
     loading: false,
     error: false,
